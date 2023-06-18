@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="270dp"
+    android:layout_height="wrap_content"
+    android:background="@color/background_app"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/dialog_title"
+        style="@style/DialogTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/dialog_title" />
+
+    <EditText
+        android:id="@+id/edit_note"
+        style="@style/Inputs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/note_title" />
+
+    <EditText
+        android:id="@+id/edit_description"
+        style="@style/Inputs"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:hint="@string/note_description" />
+
+    <EditText
+        android:id="@+id/edit_tag"
+        style="@style/Inputs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/note_tag"
+        android:inputType="text|textMultiLine" />
+
+    <Button
+        android:id="@+id/btn_dialog_add"
+        style="@style/AddButtonDialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/dialog_btn" />
+
+
+</LinearLayout>

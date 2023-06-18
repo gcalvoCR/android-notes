@@ -1,9 +1,83 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources xmlns:tools="http://schemas.android.com/tools"
+
+    >
     <!-- Base application theme. -->
     <style name="Base.Theme.Notes" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 
-    <style name="Theme.Notes" parent="Base.Theme.Notes" />
+    <style name="Theme.Notes" parent="Base.Theme.Notes">
+        <item name="android:statusBarColor">@color/background_app</item>
+    </style>
+
+    <style name="AppTitle">
+        <item name="android:layout_marginHorizontal">32dp</item>
+        <item name="android:paddingVertical">44dp</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">32sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="AddButtonMain">
+        <item name="android:layout_margin">32dp</item>
+    </style>
+
+    <style name="DialogTitle">
+        <item name="android:backgroundTint">@color/white</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:layout_marginBottom">16dp</item>
+
+    </style>
+
+    <style name="Inputs">
+        <item name="android:backgroundTint">@color/white</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textColorHint">@color/white</item>
+    </style>
+
+    <style name="AddButtonDialog">
+        <item name="android:backgroundTint">@color/accent</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:layout_marginTop">16dp</item>
+    </style>
+
+    <style name="NoteTag" parent="@style/TextAppearance.Material3.BodySmall">
+        <item name="android:textColor">@color/subtitle_text</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:translationZ">2dp</item>
+        <item name="android:layout_margin">8dp</item>
+    </style>
+
+    <style name="NoteTitle" parent="@style/TextAppearance.Material3.BodyLarge">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:translationZ">2dp</item>
+        <item name="android:layout_margin">8dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="NoteDescription" parent="@style/TextAppearance.Material3.BodyMedium">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:translationZ">2dp</item>
+        <item name="android:paddingBottom">8dp</item>
+        <item name="android:layout_margin">8dp</item>
+        <item name="android:textStyle">italic</item>
+    </style>
+
+    <style name="MainSection">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="Divider">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">2dp</item>
+        <item name="android:layout_margin">16dp</item>
+        <item name="android:background">@color/white</item>
+    </style>
+
 </resources>

@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.gcalvocr.notes.R
@@ -20,7 +19,11 @@ class NoteListFragment : Fragment() {
 
     private lateinit var  viewModel: NoteListViewModel
     private lateinit var notesRecyclerView: RecyclerView
-    private val adapter by lazy {NoteListAdapter()}
+    private val adapter by lazy {
+        NoteListAdapter(
+            onItemLongClicked = { item -> onListItemClicked(item) }
+        )
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -43,13 +46,13 @@ class NoteListFragment : Fragment() {
         with(view){
             notesRecyclerView = findViewById(R.id.notes_list)
             notesRecyclerView.adapter = adapter
-            notesRecyclerView.addItemDecoration(
-                DividerItemDecoration(
-                    context,
-                    RecyclerView.VERTICAL
-                )
-            )
-            notesRecyclerView.layoutManager= LinearLayoutManager(context, RecyclerView.VERTICAL, false)
+            //notesRecyclerView.addItemDecoration(
+            //    DividerItemDecoration(
+            //        context,
+            //        RecyclerView.VERTICAL
+            //    )
+            // )
+           notesRecyclerView.layoutManager= LinearLayoutManager(context, RecyclerView.VERTICAL, false)
         }
     }
 
@@ -59,10 +62,20 @@ class NoteListFragment : Fragment() {
         }
     }
 
-    private fun onListItemClicked(noteModel: NoteModel) {
-        Toast.makeText(context, "${noteModel.title} was clicked", Toast.LENGTH_LONG).show()
-        // Todo remove item
+    private fun onListItemClicked(note: NoteModel) {
+        val response = viewModel.onDeleteLongClicked(note.id)
+        if (response) {
+            adapter.removeData(note.id)
+            Toast.makeText(context, "${note.title} fue eliminado", Toast.LENGTH_LONG).show()
+        }
     }
 
+    fun addNote(title: String, description: String, tag: String) {
+        val note = viewModel.onAddNoteClicked(title, description, tag)
+        if (note != null) {
+            adapter.addData(note)
+            Toast.makeText(context, "Nota añadida", Toast.LENGTH_LONG).show()
+        }
+    }
 
 }

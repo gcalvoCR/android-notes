@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <dimen name="main_section_width" type="dimen">-1dp</dimen>
     <dimen name="note_item_padding">16dp</dimen>
 
 </resources>

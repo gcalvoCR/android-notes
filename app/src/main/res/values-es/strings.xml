@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">GABO Notes</string>
+    <string name="note_title">Titulo</string>
+    <string name="note_description">Descripción</string>
+    <string name="dialog_title">Nota Nueva</string>
+    <string name="note_tag">Etiqueta</string>
+    <string name="dialog_btn">Crear nota</string>
+</resources>
