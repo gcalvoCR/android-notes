@@ -9,4 +9,9 @@ object TagMapper {
         id = this.id,
         title = this.title
     )
+
+    fun TagModel.toLocalTag(): LocalTag  = LocalTag(
+        id = this.id,
+        title = this.title
+    )
 }
