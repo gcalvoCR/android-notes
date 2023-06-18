@@ -6,10 +6,11 @@ This is a project in progress at the moment.
 ## Basic Look and feel
 
 ### Main Activity
-[Alt text](image.png)
+
+![Main Activity](./image_front.png)
 
 ### Basic dialog
-[Alt text](dialog.png)
+![Alt text](./dialog.png)
 
 ---
 
