@@ -6,4 +6,11 @@
     <string name="dialog_title">Nota Nueva</string>
     <string name="note_tag">Etiqueta</string>
     <string name="dialog_btn">Crear nota</string>
+    <string name="tags_title">Etiqueta</string>
+
+    <string name="remove_note_confirm_title">Eliminar Nota</string>
+    <string name="remove_tag_confirm_message">Estás seguro de eliminar la nota %s?</string>
+    <string name="confirm_alert_positive_action">Si</string>
+    <string name="confirm_alert_negative_action">No</string>
+
 </resources>

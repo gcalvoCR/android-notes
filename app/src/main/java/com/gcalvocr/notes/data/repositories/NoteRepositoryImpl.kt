@@ -1,51 +1,25 @@
 package com.gcalvocr.notes.data.repositories
 
-import com.gcalvocr.notes.data.datasources.LocalNoteDataSources
+import com.gcalvocr.notes.data.datasources.LocalNoteDataSource
 import com.gcalvocr.notes.data.mappers.NoteMapper.toLocalNote
 import com.gcalvocr.notes.data.mappers.NoteMapper.toNote
-import com.gcalvocr.notes.data.models.LocalNote
-import com.gcalvocr.notes.data.models.LocalTag
 import com.gcalvocr.notes.domain.models.NoteModel
-import com.gcalvocr.notes.domain.models.TagModel
 import com.gcalvocr.notes.domain.repositories.NoteRepository
-import java.text.DateFormat
-import java.util.TimeZone
 
 class NoteRepositoryImpl(
-    private val localNoteDataSources: LocalNoteDataSources
+    private val localNoteDataSources: LocalNoteDataSource
 ): NoteRepository {
 
     override fun getAllNotes(): List<NoteModel> {
         return localNoteDataSources.getAllNotes().map{ item -> item.toNote()}
     }
 
-    override fun addNote(title: String, description: String, tag: String): NoteModel? {
-        // Tag logic
-        var localTag = localNoteDataSources.getTag(tag)
-        if (localTag == null ) {
-            localTag = LocalTag(
-                id= localNoteDataSources.getTagNewId(),
-                title = tag
-            )
-        }
-        // Date
+    override fun addNote(note: NoteModel): NoteModel? {
+        return localNoteDataSources.addNote(note.toLocalNote())!!.toNote()
 
-        var note = LocalNote(
-            id = localNoteDataSources.getNoteNewId(),
-            title = title,
-            description = description,
-            tag = localTag,
-            date = 1
-        )
-
-        val response = localNoteDataSources.addNote(note)
-        if (response != null) {
-            return response.toNote()
-        }
-        return null
     }
 
-    override fun deleteNote(id: Int): Boolean {
+    override fun deleteNote(id: Long): Boolean {
         return localNoteDataSources.deleteNote(id)
     }
 

@@ -18,8 +18,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:cardBackgroundColor="@color/background_card"
         app:cardCornerRadius="8dp"
-        >
-    </androidx.cardview.widget.CardView>
+        />
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/note_tag"

@@ -1,10 +1,13 @@
 package com.gcalvocr.notes.domain.models
 
-// nullable se representa con ?
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
 data class NoteModel(
-    val id:Int,
+    val id:Long,
     val title:String,
     val description:String?,
     val tag:TagModel,
-    val date: Int
-)
+    val date: Long
+): Parcelable

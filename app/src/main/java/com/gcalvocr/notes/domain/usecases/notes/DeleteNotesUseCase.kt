@@ -1,4 +1,4 @@
-package com.gcalvocr.notes.domain.usecases
+package com.gcalvocr.notes.domain.usecases.notes
 
 import com.gcalvocr.notes.domain.repositories.NoteRepository
 
@@ -6,5 +6,5 @@ import com.gcalvocr.notes.domain.repositories.NoteRepository
 class DeleteNotesUseCase(
     private val noteRepository: NoteRepository)
 {
-    fun execute(id: Int): Boolean = noteRepository.deleteNote(id)
+    fun execute(id: Long): Boolean = noteRepository.deleteNote(id)
 }

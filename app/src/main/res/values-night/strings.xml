@@ -7,4 +7,11 @@
     <string name="note_tag">Tag</string>
     <string name="dialog_btn">Create note</string>
     <string name="dialog_title">New Note</string>
+    <string name="tags_title">Tags</string>
+
+    <string name="remove_note_confirm_title">Do you want to remove the note?</string>
+    <string name="remove_tag_confirm_message">Are you sure you want to remove %s?</string>
+    <string name="confirm_alert_positive_action">Yes</string>
+    <string name="confirm_alert_negative_action">Cancel</string>
+
 </resources>

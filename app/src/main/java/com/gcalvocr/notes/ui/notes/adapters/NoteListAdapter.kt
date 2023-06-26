@@ -21,7 +21,7 @@ class NoteListAdapter(
         notifyDataSetChanged()
     }
 
-    fun removeData(id: Int){
+    fun removeData(id: Long){
         val index = data.indexOfFirst { item -> item.id == id }
         data.removeAt(index)
         notifyDataSetChanged()

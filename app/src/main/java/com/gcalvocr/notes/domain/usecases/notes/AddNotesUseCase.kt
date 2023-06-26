@@ -1,4 +1,4 @@
-package com.gcalvocr.notes.domain.usecases
+package com.gcalvocr.notes.domain.usecases.notes
 
 import com.gcalvocr.notes.domain.models.NoteModel
 import com.gcalvocr.notes.domain.repositories.NoteRepository
@@ -7,5 +7,5 @@ import com.gcalvocr.notes.domain.repositories.NoteRepository
 class AddNotesUseCase(
     private val noteRepository: NoteRepository)
 {
-    fun execute(title: String, description: String, tag: String): NoteModel? = noteRepository.addNote(title, description, tag)
+    fun execute(note: NoteModel): NoteModel? = noteRepository.addNote(note)
 }
